@@ -1,1 +1,1 @@
-# CSESocAnnualHackathon2020
+# CSESoc Annual Hackathon 2020
