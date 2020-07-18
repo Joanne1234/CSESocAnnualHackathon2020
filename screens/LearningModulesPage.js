@@ -1,26 +1,31 @@
-//APIKEY = AIzaSyAu35r2TAj8ewMVvQjrVz80o8k1X0K0LOE
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Button from '../components/Button.js';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import {Button} from '../components/Buttons';
 import LearningModule from '../components/LearningModule';
 
 function LearningModulesPage({route, navigation}) {
+    const {videoId} = route.params;
+    const {topic} = route.params;
     const CertificatesButton = {
         text: "Finish",
         onpress: () => {
-            navigation.navigate('CertificatesPage')
+            navigation.navigate('CertificatesPage', {
+              trainingCompleted: topic, 
+              dateCompleted: "19 Jul 2020",
+            })
         }
     };
-    const {videoId} = route.params;
+    
     return (
     <View style={styles.container}>
-      <Text style={styles.text}>Scams</Text>
+      <Text style={styles.text}>{topic}</Text>
       <LearningModule videoId={videoId}/>
       <Button button={CertificatesButton}/>
     </View>
   );
 }
+
+const textSize = Dimensions.get('window').width/15;
 
 const styles = StyleSheet.create({
   container: {
@@ -36,7 +41,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 10,
     margin: 10,
-    fontSize: 50
+    fontSize: textSize
   }
 });
 

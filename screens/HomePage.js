@@ -1,7 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Button from '../components/Button.js';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import {Button} from '../components/Buttons';
 
 function HomePage({navigation, route}) {
   const LearnButton = {
@@ -18,18 +17,17 @@ function HomePage({navigation, route}) {
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Welcome back John Doe.
+      <Text style={styles.text}>Welcome back Amy.
         {"\n"}
         Let's start learning and stay Cyber Safe!!!
       </Text>
-      <StatusBar style="auto" />
       <Button button={LearnButton}/>
       <Button button={ProgressButton}/>
       <Button button={CertificatesButton}/>
     </View>
   );
 }
-
+const textSize = Dimensions.get('window').width/15;
 
 const styles = StyleSheet.create({
   container: {
@@ -45,7 +43,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 10,
     margin: 10,
-    fontSize: 50
+    fontSize: textSize
   }
 });
 
