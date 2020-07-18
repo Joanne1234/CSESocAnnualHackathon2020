@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Button from '../components/Button.js';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import {Button} from '../components/Buttons';
 
 function ProgressPage({navigation, route}) {
   const LearnButton = {
@@ -22,6 +22,7 @@ function ProgressPage({navigation, route}) {
   );
 }
 
+const textSize = Dimensions.get('window').width/15;
 
 const styles = StyleSheet.create({
   container: {
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 10,
     margin: 10,
-    fontSize: 50
+    fontSize: textSize
   }
 });
 

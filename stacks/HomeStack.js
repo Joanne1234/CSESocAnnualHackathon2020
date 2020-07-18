@@ -1,11 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import "react-native-gesture-handler";
 import React from "react";
-
-/* -------------------------------------------------------------------------- */
-/*                     Pages or Routes render componenets                     */
-/* -------------------------------------------------------------------------- */
-
 import HomePage from "../screens/HomePage"
 import LearnPage from "../screens/LearnPage";
 import CertificatesPage from "../screens/CertificatesPage";
@@ -17,7 +12,6 @@ const Stack = createStackNavigator();
 const options = {
     headerStyle: {
         backgroundColor: 'lavendar',
-        height: 100
     }
   }
 
